@@ -1,0 +1,23 @@
+version: "3"
+services:
+  elasticsearch01:
+    build: es/
+    container_name: elasticsearch01
+    volumes:
+      - ./es/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+      - 9201:9200
+  elasticsearch02:
+    build: es/
+    container_name: elasticsearch02
+    volumes:
+      - ./es/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+      - 9202:9200
+  elasticsearch03:
+    build: es/
+    container_name: elasticsearch03
+    volumes:
+      - ./es/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+      - 9203:9200
