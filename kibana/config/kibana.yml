@@ -1,0 +1,6 @@
+server.name: kibana
+server.host: "0"
+elasticsearch.hosts: [ "http://elasticsearch01:9200" ]
+elasticsearch.requestTimeout:  60000
+xpack.monitoring.ui.container.elasticsearch.enabled: true
+

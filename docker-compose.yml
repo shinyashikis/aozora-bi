@@ -1,23 +1,33 @@
 version: "3"
 services:
   elasticsearch01:
-    build: es/
-    container_name: elasticsearch01
+    build: ./es
+    container_name: aozora-bi_elasticsearch01
     volumes:
       - ./es/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     ports:
       - 9201:9200
   elasticsearch02:
-    build: es/
-    container_name: elasticsearch02
+    build: ./es
+    container_name: aozora-bi_elasticsearch02
     volumes:
       - ./es/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     ports:
       - 9202:9200
   elasticsearch03:
-    build: es/
-    container_name: elasticsearch03
+    build: ./es
+    container_name: aozora-bi_elasticsearch03
     volumes:
       - ./es/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     ports:
       - 9203:9200
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.1.1
+    container_name: aozora-bi_kibana
+    volumes:
+      - ./kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml
+    links:
+      - elasticsearch01:elasticsearch
+    ports:
+      - 5601:5600
+
