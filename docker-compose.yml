@@ -7,6 +7,8 @@ services:
       - ./es/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     ports:
       - 9201:9200
+    environment:
+      NODE_NAME: elasticsearch01
   elasticsearch02:
     build: ./es
     container_name: aozora-bi_elasticsearch02
@@ -14,6 +16,8 @@ services:
       - ./es/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     ports:
       - 9202:9200
+    environment:
+      NODE_NAME: elasticsearch02
   elasticsearch03:
     build: ./es
     container_name: aozora-bi_elasticsearch03
@@ -21,6 +25,8 @@ services:
       - ./es/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
     ports:
       - 9203:9200
+    environment:
+      NODE_NAME: elasticsearch03
   kibana:
     image: docker.elastic.co/kibana/kibana:7.1.1
     container_name: aozora-bi_kibana
@@ -29,5 +35,4 @@ services:
     links:
       - elasticsearch01:elasticsearch
     ports:
-      - 5601:5600
-
+      - 5601:5601
