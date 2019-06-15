@@ -5,6 +5,7 @@ services:
     container_name: aozora-bi_elasticsearch01
     volumes:
       - ./es/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./es/data/elasticsearch01:/usr/share/elasticsearch/data
     ports:
       - 9201:9200
     environment:
@@ -14,6 +15,7 @@ services:
     container_name: aozora-bi_elasticsearch02
     volumes:
       - ./es/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./es/data/elasticsearch02:/usr/share/elasticsearch/data
     ports:
       - 9202:9200
     environment:
@@ -23,6 +25,7 @@ services:
     container_name: aozora-bi_elasticsearch03
     volumes:
       - ./es/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./es/data/elasticsearch03:/usr/share/elasticsearch/data
     ports:
       - 9203:9200
     environment:
