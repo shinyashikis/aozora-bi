@@ -1,5 +1,10 @@
 version: "3"
 services:
+  embulk:
+    build: ./embulk
+    container_name: aozora-bi_embulk
+    tty: true
+
   elasticsearch01:
     build: ./es
     container_name: aozora-bi_elasticsearch01
@@ -10,6 +15,7 @@ services:
       - 9201:9200
     environment:
       NODE_NAME: elasticsearch01
+
   elasticsearch02:
     build: ./es
     container_name: aozora-bi_elasticsearch02
@@ -20,6 +26,7 @@ services:
       - 9202:9200
     environment:
       NODE_NAME: elasticsearch02
+
   elasticsearch03:
     build: ./es
     container_name: aozora-bi_elasticsearch03
@@ -30,6 +37,7 @@ services:
       - 9203:9200
     environment:
       NODE_NAME: elasticsearch03
+      
   kibana:
     image: docker.elastic.co/kibana/kibana:7.1.1
     container_name: aozora-bi_kibana
