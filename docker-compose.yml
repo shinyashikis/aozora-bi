@@ -1,10 +1,5 @@
 version: "3"
 services:
-  embulk:
-    build: ./embulk
-    container_name: aozora-bi_embulk
-    tty: true
-
   elasticsearch01:
     build: ./es
     container_name: aozora-bi_elasticsearch01
