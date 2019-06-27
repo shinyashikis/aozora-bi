@@ -8,4 +8,6 @@ RUN curl --create-dirs -o /bin/embulk -L "https://dl.embulk.org/embulk-latest.ja
 RUN apk add libc6-compat \
   && /bin/embulk gem install embulk-output-elasticsearch
 
+WORKDIR /work
+
 ENTRYPOINT ["java", "-jar", "/bin/embulk"]

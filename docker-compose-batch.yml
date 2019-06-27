@@ -3,4 +3,6 @@ services:
   embulk:
     build: ./embulk
     container_name: aozora-bi_embulk
+    volumes:
+      - ./embulk/data:/work
     #tty: true
