@@ -1,3 +1,4 @@
 csv/*
 es/data/*
+embulk/data/*
 !.gitkeep
