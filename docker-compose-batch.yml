@@ -5,4 +5,5 @@ services:
     container_name: aozora-bi_embulk
     volumes:
       - ./embulk/data:/work
-    #tty: true
+    external_links:
+      - aozora-bi_elasticsearch01:elasticsearch
